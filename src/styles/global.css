@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 10%;
+    --foreground: 250 47% 92%;
+    --surface: 240 33% 10%;
+    --surface-low: 240 25% 13%;
+    --surface-container: 240 21% 15%;
+    --surface-high: 240 16% 19%;
+    --surface-bright: 240 13% 25%;
+    --primary: 267 84% 81%;
+    --primary-foreground: 240 33% 10%;
+    --primary-container: 267 84% 81%;
+    --secondary: 217 100% 83%;
+    --tertiary: 23 100% 73%;
+    --muted: 240 16% 19%;
+    --muted-foreground: 256 16% 79%;
+    --border: 240 13% 25%;
+    --radius: 1rem;
+  }
+  html { scroll-behavior: auto; }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+    background-image:
+      radial-gradient(800px 500px at 85% -10%, hsl(var(--primary-container) / 0.07), transparent 60%),
+      radial-gradient(700px 400px at -10% 30%, hsl(var(--secondary) / 0.05), transparent 60%);
+  }
+  ::selection { background: hsl(var(--primary-container) / 0.35); }
+  h1, h2, h3, h4 { @apply font-display; letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .glass {
+    background: hsl(var(--surface-container) / 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary-container)), hsl(var(--secondary)) 60%, hsl(var(--tertiary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .surface-card {
+    background: hsl(var(--surface-container));
+    border-radius: var(--radius);
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), background .3s ease;
+  }
+  .surface-card:hover { background: hsl(var(--surface-high)); transform: translateY(-2px); }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--surface-bright) / .25) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--surface-bright) / .25) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 30%, black 40%, transparent 80%);
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 30%, black 40%, transparent 80%);
+  }
+}

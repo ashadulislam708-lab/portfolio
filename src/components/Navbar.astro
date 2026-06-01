@@ -1,0 +1,52 @@
+---
+import { NAV } from '../data/portfolio';
+---
+<header id="site-nav" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(960px,calc(100%-2rem))] transition-all">
+  <nav class="glass rounded-full px-5 py-3 flex items-center justify-between">
+    <a href="#home" class="font-display font-bold tracking-tight">
+      <span class="text-primary-container">~/</span>ashadul<span class="text-primary-container animate-blink">_</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-1 text-sm">
+      {NAV.map((n) => (
+        <li>
+          <a data-nav={n.id} href={`#${n.id}`} class="nav-link px-3 py-1.5 rounded-full transition-colors font-medium text-muted-foreground hover:text-foreground">{n.label}</a>
+        </li>
+      ))}
+    </ul>
+    <button id="nav-toggle" class="md:hidden p-2" aria-label="Toggle menu">
+      <div class="space-y-1.5">
+        <span class="block h-0.5 w-5 bg-foreground"></span>
+        <span class="block h-0.5 w-5 bg-foreground"></span>
+        <span class="block h-0.5 w-5 bg-foreground"></span>
+      </div>
+    </button>
+  </nav>
+  <ul id="nav-mobile" class="md:hidden hidden glass mt-2 rounded-2xl p-3 space-y-1">
+    {NAV.map((n) => (
+      <li><a data-nav={n.id} href={`#${n.id}`} class="nav-link block px-4 py-2 rounded-xl text-muted-foreground">{n.label}</a></li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+  const setActive = (id: string) => {
+    links.forEach((l) => {
+      const on = l.dataset.nav === id;
+      l.classList.toggle('text-primary-container', on);
+      l.classList.toggle('bg-surface-high', on);
+      l.classList.toggle('text-muted-foreground', !on);
+    });
+  };
+  const sections = document.querySelectorAll<HTMLElement>('section[id]');
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+  sections.forEach((s) => io.observe(s));
+
+  const toggle = document.getElementById('nav-toggle');
+  const mobile = document.getElementById('nav-mobile');
+  toggle?.addEventListener('click', () => mobile?.classList.toggle('hidden'));
+  mobile?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mobile.classList.add('hidden')));
+</script>

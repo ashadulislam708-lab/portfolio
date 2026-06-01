@@ -1,0 +1,17 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { SKILLS } from '../data/portfolio';
+---
+<section id="skills" class="py-32 container">
+  <SectionHeader index="02" title="Toolbelt" subtitle="The languages, frameworks and infra I reach for when something needs to be built right." />
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    {SKILLS.map((s, i) => (
+      <div class="surface-card p-7">
+        <p class="font-mono text-xs text-primary-container mb-4">0{i + 1} · {s.group}</p>
+        <ul class="flex flex-wrap gap-2">
+          {s.items.map((item) => <li class="text-sm font-mono px-3 py-1 rounded-full bg-surface-high">{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

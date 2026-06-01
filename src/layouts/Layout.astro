@@ -1,0 +1,19 @@
+---
+import '../styles/global.css';
+const { title = 'Ashadul — Engineer, Creator & Digital Innovator', description = 'Ashadul — Fullstack engineer building high-performance backends, event-driven microservices and scalable web apps in TypeScript, Python and Go.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { EXPERIENCE } from '../data/portfolio';
+---
+<section id="experience" class="py-32 container">
+  <SectionHeader index="03" title="Experience" subtitle="Where I've been writing production code." />
+  <ol class="space-y-10">
+    {EXPERIENCE.map((e) => (
+      <li class="grid md:grid-cols-12 gap-6 surface-card p-8">
+        <div class="md:col-span-4">
+          <p class="font-mono text-xs text-primary-container">{e.period}</p>
+          <h3 class="font-display text-2xl font-semibold mt-2">{e.company}</h3>
+          <p class="text-muted-foreground mt-1">{e.role}</p>
+          <p class="text-sm text-muted-foreground/70 mt-1">{e.location}</p>
+        </div>
+        <ul class="md:col-span-8 space-y-3 text-muted-foreground">
+          {e.bullets.map((b) => (
+            <li class="flex gap-3 leading-relaxed"><span class="text-primary-container font-mono mt-1">›</span><span>{b}</span></li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+</section>

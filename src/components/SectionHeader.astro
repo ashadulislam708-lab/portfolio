@@ -1,0 +1,8 @@
+---
+const { index, title, subtitle } = Astro.props;
+---
+<div class="mb-14 max-w-3xl">
+  <p class="font-mono text-sm text-primary-container mb-3"><span class="text-muted-foreground">{index}</span> — {title.toLowerCase()}</p>
+  <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight">{title}</h2>
+  {subtitle && <p class="mt-5 text-lg text-muted-foreground leading-relaxed">{subtitle}</p>}
+</div>

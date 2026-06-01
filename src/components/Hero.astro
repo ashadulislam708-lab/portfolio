@@ -1,0 +1,43 @@
+---
+---
+<section id="home" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+  <div class="absolute -top-32 -right-40 w-[640px] h-[640px] rounded-full blur-3xl opacity-20 bg-primary-container animate-float pointer-events-none"></div>
+  <div class="absolute -bottom-32 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-15 bg-secondary pointer-events-none"></div>
+
+  <div class="container relative z-10">
+    <p class="hero-eyebrow font-mono text-sm text-primary-container mb-6"><span class="text-muted-foreground">$</span> whoami</p>
+    <h1 class="font-display font-bold leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+      <span class="hero-line block">Ashadul,</span>
+      <span class="hero-line block">Building the <span class="text-gradient">future</span>.</span>
+    </h1>
+    <p class="hero-sub mt-8 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+      Fullstack engineer obsessed with <span class="text-foreground font-medium">high-performance backends</span>, event-driven microservices and the kind of clean architecture that ages well. I write <span class="font-mono text-primary-container">TypeScript</span> &amp; <span class="font-mono text-secondary">Python</span> for a living — and react/Next when the frontend asks nicely.
+    </p>
+    <div class="hero-cta mt-10 flex flex-wrap items-center gap-4">
+      <a href="/Azmain_Mahtab_Seam_resume.pdf" download="Azmain_Mahtab_Seam_resume.pdf" class="inline-flex items-center gap-2 rounded-full bg-primary-container text-primary-foreground px-6 py-3 font-medium hover:opacity-90 transition shadow-[0_8px_30px_-10px_hsl(var(--primary-container)/0.6)]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download résumé
+      </a>
+      <a href="#projects" class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium hover:text-primary-container transition">
+        See projects
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+    </div>
+    <div class="hero-meta mt-16 flex flex-wrap gap-x-10 gap-y-4 text-sm font-mono text-muted-foreground">
+      <span><span class="text-primary-container">→</span> Dhaka, BD</span>
+      <span><span class="text-primary-container">→</span> Available for collaboration</span>
+      <span><span class="text-primary-container">→</span> ~4 yrs shipping production code</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from('.hero-eyebrow', { opacity: 0, y: 20, duration: 0.6 })
+    .from('.hero-line', { opacity: 0, y: 40, duration: 0.9, stagger: 0.12 }, '-=0.3')
+    .from('.hero-sub', { opacity: 0, y: 20, duration: 0.7 }, '-=0.5')
+    .fromTo('.hero-cta > *', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, '-=0.4')
+    .from('.hero-meta > *', { opacity: 0, y: 10, duration: 0.5, stagger: 0.08 }, '-=0.4');
+</script>
