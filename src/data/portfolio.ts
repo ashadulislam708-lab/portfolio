@@ -18,7 +18,8 @@ export const EXPERIENCE = [
   {
     company: 'Potential', role: 'Software Engineer', location: 'Seoul, South Korea', period: 'Dec 2025 — Present',
     bullets: [
-      'Led backend team, driving API design and development using NestJS.',
+      'Architected and led backend infrastructure, designing high-throughput REST APIs and microservices in NestJS to power scalable, production-grade systems.',
+      'Engineered Coaching Record end-to-end (NestJS, PostgreSQL, React) to connect athletes, coaches, and families with real-time progress tracking and subscription-based monetization.',
       'Contributed to frontend development using React, ensuring end-to-end feature delivery.',
     ],
   },
