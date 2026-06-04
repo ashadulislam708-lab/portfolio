@@ -16,22 +16,27 @@ export const SKILLS = [
 
 export const EXPERIENCE = [
   {
-    company: 'Defined Solution', role: 'Backend Developer', location: 'Rampura, Dhaka', period: 'Feb 2024 — Apr 2026',
+    company: 'Potential', role: 'Software Engineer', location: 'Seoul, South Korea', period: 'Dec 2025 — Present',
     bullets: [
-      'Architected systems using Hexagonal Architecture and DDD for long-term maintainability.',
-      'Translated complex business requirements into scalable technical specs through stakeholder collaboration.',
-      'Owned end-to-end API development and third-party integrations with a performance & security focus.',
-      'Mentored junior devs through rigorous code reviews — culture of clean code and technical excellence.',
-      'Optimized multi-tenant DB schemas and queries to slash latency for high-concurrency enterprise apps.',
+      'Led backend team, driving API design and development using NestJS.',
+      'Contributed to frontend development using React, ensuring end-to-end feature delivery.',
     ],
   },
   {
-    company: 'TechTrioz Solutions', role: 'Full Stack Developer', location: 'Bashundhara R/A, Dhaka', period: 'Nov 2022 — Dec 2023',
+    company: 'Bit Byte Technology', role: 'Software Engineer', location: 'Dhaka, Bangladesh', period: 'Mar 2023 — Nov 2025',
     bullets: [
-      'Owned the full SDLC for large-scale ERP and e-commerce platforms — DB modeling to production.',
-      'Engineered critical financial and inventory modules with 100% data integrity across multi-branch envs.',
-      'Partnered with PMs to set technical milestones and consistently shipped within sprint goals.',
-      'Executed legacy migrations and performance refactors — significantly improved responsiveness.',
+      'Maintained a SaaS platform handling 10M+ requests per month, ensuring high availability and performance.',
+      'Reduced AWS S3 costs by implementing a custom CDN system, optimizing storage and delivery expenses.',
+      'Lead the backend development at Australia Govt Project Acceler8.',
+      'Developed the e-commerce SaaS product Bit Commerce.',
+    ],
+  },
+  {
+    company: 'Decode lab', role: 'Junior Software Engineer', location: 'Dhaka, Bangladesh', period: 'Jan 2022 — Feb 2023',
+    bullets: [
+      'Optimized the admin panel for best practicify project, dramatically cutting loading time from 50 seconds to 10 seconds.',
+      'Solved complex MERN frontend challenges, mentored teammates, and ensured on-time delivery.',
+      'Built and shipped diverse category websites including e-commerce platforms, law firm sites, Bangladesh government portals, delivery systems, and ERP solutions.',
     ],
   },
 ];
