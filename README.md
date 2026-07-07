@@ -1,4 +1,4 @@
-# Azmain — the chonkdev · Astro Portfolio
+# Astro Portfolio
 
 Single-page Astro portfolio with Tailwind + GSAP, Catppuccin Mocha dark theme.
 
